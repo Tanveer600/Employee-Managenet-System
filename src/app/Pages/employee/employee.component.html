@@ -1,0 +1,161 @@
+<div class="container mt-5">
+      <!-- Employee Form -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Employee Form</h1>
+        <button class="btn btn-success" (click)="isformvisible.set(true)">Add New</button>
+    </div>
+  @if(isformvisible()){
+    <form #form="ngForm">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="employeeName" class="form-label">Employee Name</label>
+                <input type="text" class="form-control" #fName="ngModel" [(ngModel)]="employeeform.employeeName" name="employeeName" id="employeeName" placeholder="Enter employee name" required>
+                <div class="text-danger">
+                    @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                        <span>Employee name is required</span>
+                    }
+                                      
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="employeeEmail" class="form-label">Email</label>
+                <input type="text" class="form-control"  #fName="ngModel"  [(ngModel)]="employeeform.emailID" name="email" id="employeeEmail" placeholder="Enter email" required>
+                <div class="text-danger">
+                @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                    <span>Email name is required</span>
+                }
+            </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="employeePhone" class="form-label">Contact</label>
+                <input type="text" class="form-control"  #fName="ngModel" [(ngModel)]="employeeform.contactNo" name="contactNo" id="employeePhone" placeholder="Enter phone number" required>
+                <div class="text-danger">
+                @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                    <span>Contact is required</span>
+                }
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="departmentDropdown" class="form-label">Department</label>
+                <select class="form-control"  #fName="ngModel" id="departmentDropdown" name="ParentDeprtID" [(ngModel)]="ParentDeprtID" (change)="onparentdeptchange()" required >
+                    @for (item of parentdeptlist(); track $index) {
+                        <option [value]="item.departmentId">{{item.departmentName}}</option>
+                    }
+                </select>
+                <div class="text-danger">
+                @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                    <span>Department is required</span>
+                }
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="departmentDropdown" class="form-label"> child Department</label>
+                <select class="form-control"  #fName="ngModel" [(ngModel)]="employeeform.deptID" name="deptID" id="departmentDropdown" required>                 
+                    @for (item of childdeptlist(); track $index) {
+                        <option [value]="item.childDeptId">{{item.departmentName}}</option>
+                    }
+                </select>
+                <div class="text-danger">
+                @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                    <span>child Department is required</span>
+                }
+                </div>
+            </div>
+          
+            <div class="col-md-6 mb-3">
+                <label for="employeeSalary" class="form-label">Password</label>
+                <input type="text" class="form-control" #fName="ngModel" [(ngModel)]="employeeform.password" name="password" id="employeeSalary" placeholder="Enter salary" required minlength="6" required >
+                <div class="text-danger">
+                    @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                        <span>Password is required</span>
+                    }
+                    @else if ((fName.touched || fName.dirty) && fName.errors?.['minlength']) {
+                        <span>min 3 char required</span>
+                    }                   
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="employeeSalary" class="form-label">Role</label>
+                <input type="text" class="form-control"  #fName="ngModel" [(ngModel)]="employeeform.role" name="role" id="employeeSalary" placeholder="Enter salary" required>
+                <div class="text-danger">
+                    @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                        <span>Role is required</span>
+                    }
+                                    
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="departmentDropdown" class="form-label">Gender</label>
+                <select class="form-control" [(ngModel)]="employeeform.gender" #fName="ngModel" name="gender" id="departmentDropdown" required>
+                    <option value="">Select Department</option>
+                    <option>Male</option>
+                    <option>FeMale</option>
+                </select>
+                <div class="text-danger">
+                    @if((fName.touched || fName.dirty) && fName.errors?.['required']){
+                        <span>Gender is required</span>
+                    }
+                                     
+                </div>
+            </div>
+        </div>
+        @if(this.employeeform.employeeId==0){
+            <button type="button" (click)="onSubmit()" [disabled]="form.invalid" class="btn btn-primary mr-3">save Employee</button>
+            <button  class="btn btn-outline-secondary"  (click)="isformvisible.set(false)">close</button>
+        }
+        @else {
+            <button type="button" (click)="updatesemp()" class="btn btn-primary mr-3">Update Employee</button>
+            <button  class="btn btn-warning-secondary"  (click)="isformvisible.set(false)">close</button>
+        }
+       
+    </form>
+
+  }
+    <!-- Employee Table -->
+    <div class="mt-5">
+        <h3>Employee List</h3>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>#srno</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>password</th>
+                    <th>deptID</th>
+                    <th>role</th>
+                    <th>gender</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of employeelist(); track $index){
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.employeeName}}</td>
+                        <td>{{item.emailID}}</td>
+                        <td>{{item.contactNo}}</td>
+                        <td>{{item.password}}</td>
+                        <td>{{ getDepartmentName(item.deptID) }}</td>
+                        <td>{{item.role}}</td>
+                        <td>{{item.gender}}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" (click)="onedit(item)" >Edit</button>
+                            <button class="btn btn-danger btn-sm" (click)="onDelete(item.employeeId)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+</div>

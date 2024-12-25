@@ -1,0 +1,41 @@
+<!-- Employee Table -->
+<div class="mt-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <h3>Project List</h3>
+        <button class="btn btn-primary btn-sm" routerLink="/projectfrom/0">New Project</button>
+    </div>
+    <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>#srno</th>
+                <th>Name</th>
+                <th>client Name</th>
+                <th>contact No</th>
+                <th>contact Person</th>
+                <th>leadByEmp Id</th>
+                <th>email Id</th>
+                <th>startDate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of projectlist; track $index){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <!-- <td>{{item.projectId}}</td> -->
+                    <td>{{item.projectName}}</td>
+                    <td>{{item.clientName}}</td>
+                    <td>{{item.contactNo}}</td>
+                    <td>{{item.contactPerson}}</td>
+                    <td>{{item.leadByEmpId}}</td>
+                    <td>{{item.emailId}}</td>
+                    <td>{{item.startDate}}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" (click)="onedit(item.projectId)">Edit</button>
+                        <button class="btn btn-danger btn-sm" (click)="onDelete(item.projectId)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
