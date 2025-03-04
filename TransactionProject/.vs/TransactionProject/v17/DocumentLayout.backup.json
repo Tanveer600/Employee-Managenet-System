@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\dal\\transactiondal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\dal\\transactiondal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\models\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|d:\\angular\\employee-managenet-system\\employee-managenet-system\\transactionproject\\transactionproject\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADEE2788-E96B-4AD2-BC2B-466740451012}|TransactionProject\\TransactionProject.csproj|solutionrelative:transactionproject\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\Controllers\\TransactionController.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "TransactionProject\\Controllers\\TransactionController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA1wBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TransactionDAL.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\DAL\\TransactionDAL.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\DAL\\TransactionDAL.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\DAL\\TransactionDAL.cs",
+              "RelativeToolTip": "TransactionProject\\DAL\\TransactionDAL.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountDAL.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\DAL\\AccountDAL.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\DAL\\AccountDAL.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\DAL\\AccountDAL.cs",
+              "RelativeToolTip": "TransactionProject\\DAL\\AccountDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Program.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\Program.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Program.cs",
+              "RelativeToolTip": "TransactionProject\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAcwBIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Models\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\Models\\DatabaseContext.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Models\\DatabaseContext.cs",
+              "RelativeToolTip": "TransactionProject\\Models\\DatabaseContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\Models\\Account.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Models\\Account.cs",
+              "RelativeToolTip": "TransactionProject\\Models\\Account.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "TransactionProject\\Models\\Transaction.cs",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\Models\\Transaction.cs",
+              "RelativeToolTip": "TransactionProject\\Models\\Transaction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:00:08.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\appsettings.json",
+              "RelativeDocumentMoniker": "TransactionProject\\appsettings.json",
+              "ToolTip": "D:\\angular\\Employee-Managenet-System\\Employee-Managenet-System\\TransactionProject\\TransactionProject\\appsettings.json",
+              "RelativeToolTip": "TransactionProject\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-04T18:00:08.236Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
