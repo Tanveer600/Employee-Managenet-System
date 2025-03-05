@@ -1,0 +1,20 @@
+<form [formGroup]="Accountform">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name"  name="name" id="name" placeholder="Enter name">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="accountType" class="form-label">account Type</label>
+            <input type="text" class="form-control" formControlName="accountType"   name="accountType" id="accountType" placeholder="Enter account Type">
+        </div>   
+    @if(Accountform.controls['id'].value==0){
+        <button type="button" (click)="onSaveAccount()" class="btn btn-primary mr-3">save Account</button>
+        <!-- <button  class="btn btn-outline-secondary"  (click)="isformvisible.set(false)">close</button> -->
+    }
+    @else {
+        <button type="button" (click)="onupdateAccount()" class="btn btn-primary mr-3">Update Account</button>
+        <!-- <button  class="btn btn-warning-secondary"  (click)="isformvisible.set(false)">close</button> -->
+    }
+   </div>
+</form>

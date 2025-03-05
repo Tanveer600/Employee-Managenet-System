@@ -1,0 +1,43 @@
+<form [formGroup]="Transactionform">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="transactionDate" class="form-label">Transaction Date</label>
+            <input type="text" class="form-control" formControlName="transactionDate"  name="transactionDate" id="transactionDate" placeholder="Enter transactionDate">
+        </div>
+    
+      
+
+        <div class="col-md-6 mb-3">
+            <label for="departmentDropdown" class="form-label">Account Name</label>
+
+            <select class="form-control" id="departmentDropdown" formControlName="accountId">
+                @for (item of accountList$ |async; track $index) {
+                    <option [value]="">select</option>
+                    <option [value]="item.id">{{item.name}}</option>
+                }
+            </select>          
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" formControlName="description"  name="description" id="description" placeholder="Enter description">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="debitAmount" class="form-label">Debit Amount</label>
+            <input type="text" class="form-control" formControlName="debitAmount" name="debitAmount" id="debitAmount" placeholder="Enter debit Amount">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="creditAmount" class="form-label">Credit Amount</label>
+            <input type="text" class="form-control" formControlName="creditAmount" name="creditAmount" id="creditAmount" placeholder="Enter creditAmount">
+        </div>
+    </div>
+   
+    @if(Transactionform.controls['id'].value==0){
+        <button type="button" (click)="onSaveTransaction()" class="btn btn-primary mr-3">save Transaction</button>
+        <!-- <button  class="btn btn-outline-secondary"  (click)="isformvisible.set(false)">close</button> -->
+    }
+    @else {
+        <button type="button" (click)="onupdateTransaction()" class="btn btn-primary mr-3">Update Transaction</button>
+        <!-- <button  class="btn btn-warning-secondary"  (click)="isformvisible.set(false)">close</button> -->
+    }
+   
+</form>

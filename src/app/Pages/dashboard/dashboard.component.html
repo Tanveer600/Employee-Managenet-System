@@ -4,8 +4,8 @@
         <div class="col-md-6 col-4"> 
             <div class="small-box text-bg-primary" style="height: auto;">
                 <div class="inner">
-                    <h3>{{ (Employeelist$ | async)?.length }}</h3>
-                    <p>Total Employees</p>
+                    <h3>{{ (transactionist$ | async)?.length }}</h3>
+                    <p>Total Transaction</p>
                 </div>
                 <a routerLink="/employee" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                     More info <i class="bi bi-link-45deg"></i> 
@@ -17,8 +17,8 @@
         <div class="col-md-6 col-4"> 
             <div class="small-box text-bg-success" style="height: auto;">
                 <div class="inner">
-                    <h3>{{ (projectlist$ | async)?.length }}</h3>
-                    <p>Total Projects</p>
+                    <h3>{{ (accountList$ | async)?.length }}</h3>
+                    <p>Total Account</p>
                 </div>
                 <a routerLink="/project" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                     More info <i class="bi bi-link-45deg"></i> 
