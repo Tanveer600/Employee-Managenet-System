@@ -1,20 +1,52 @@
-<form [formGroup]="Accountform">
+<form [formGroup]="Accountform" (ngSubmit)="onSaveAccount()">
     <div class="row">
+        <!-- Name Input -->
         <div class="col-md-6 mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" formControlName="name"  name="name" id="name" placeholder="Enter name">
+            <input type="text" 
+            class="form-control" 
+            [ngClass]="{
+              'is-valid': Accountform.controls['name'].valid && Accountform.controls['name'].touched && Accountform.controls['name'].dirty,
+              'is-invalid': Accountform.controls['name'].invalid && Accountform.controls['name'].touched
+            }"
+            formControlName="name" 
+            id="name">
+     <div *ngIf="Accountform.controls['name'].invalid && Accountform.controls['name'].touched" class="text-danger">
+        account name is required.
+     </div>
         </div>
+
+        <!-- Account Type Input -->
         <div class="col-md-6 mb-3">
-            <label for="accountType" class="form-label">account Type</label>
-            <input type="text" class="form-control" formControlName="accountType"   name="accountType" id="accountType" placeholder="Enter account Type">
+            <label for="accountType" class="form-label">Account Type</label>
+            <input type="text" 
+            class="form-control" 
+            [ngClass]="{
+              'is-valid': Accountform.controls['accountType'].valid && Accountform.controls['accountType'].touched && Accountform.controls['accountType'].dirty,
+              'is-invalid': Accountform.controls['accountType'].invalid && Accountform.controls['accountType'].touched
+            }"
+            formControlName="accountType" 
+            id="accountType">
+     <div *ngIf="Accountform.controls['accountType'].invalid && Accountform.controls['accountType'].touched" class="text-danger">
+        account type is required.
+     </div>
         </div>   
-    @if(Accountform.controls['id'].value==0){
-        <button type="button" (click)="onSaveAccount()" class="btn btn-primary mr-3">save Account</button>
-        <!-- <button  class="btn btn-outline-secondary"  (click)="isformvisible.set(false)">close</button> -->
-    }
-    @else {
-        <button type="button" (click)="onupdateAccount()" class="btn btn-primary mr-3">Update Account</button>
-        <!-- <button  class="btn btn-warning-secondary"  (click)="isformvisible.set(false)">close</button> -->
-    }
-   </div>
+    </div>
+
+    <!-- Buttons Row -->
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @if(Accountform.controls['id'].value == 0) {
+                <button type="button" (click)="onSaveAccount()" class="btn btn-primary w-100">Save Account</button>
+            }
+            @else {
+                <button type="button" (click)="onupdateAccount()" class="btn btn-primary w-100">Update Account</button>
+            }
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <button type="button" class="btn btn-secondary w-100" (click)="closeForm()">Close</button>
+        </div>
+    </div>
 </form>
+

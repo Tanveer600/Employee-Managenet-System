@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Account } from '../../model/interface';
 import { MasterService } from '../../service/master.service';
 import { Router, RouterModule } from '@angular/router';
-
+import { provideToastr, ToastrService } from 'ngx-toastr'; // Import ToastrService
 @Component({
   selector: 'app-account',
   standalone: true,
@@ -13,7 +13,7 @@ import { Router, RouterModule } from '@angular/router';
 export class AccountComponent {
  accountList:Account[]=[];
 
- constructor(private masterService: MasterService, private router: Router) {}
+ constructor(private masterService: MasterService, private router: Router,private toastr:ToastrService) {}
 
   ngOnInit(): void {
    this.getProdata();
@@ -37,11 +37,11 @@ onDelete(id: number){
     //debugger;
     this.masterService.deleteACCOUNTbyid(id).subscribe(
       (res: any) => {
-        alert("Account deleted successfully");
+        this.toastr.success('Record deleted successfully!', 'Success'); // Success Toast  
         this.getProdata();
       },
       (error: any) => {
-        alert("An error occurred while deleting the record");
+        this.toastr.error('Failed to delete account!', 'Error'); // Success Toast  
         console.error("Error:", error); // Log the error for debugging
       }
     );

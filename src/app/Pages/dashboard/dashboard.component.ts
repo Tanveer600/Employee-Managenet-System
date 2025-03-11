@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Account, Project, Transaction } from '../../model/interface';
-import { Employee } from '../../model/Employee';
+import { Account, Transaction } from '../../model/interface';
 import { MasterService } from '../../service/master.service';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';

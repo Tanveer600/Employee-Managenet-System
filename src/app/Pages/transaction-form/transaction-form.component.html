@@ -1,43 +1,102 @@
-<form [formGroup]="Transactionform">
+<form [formGroup]="Transactionform" (ngSubmit)="onSaveTransaction()">
     <div class="row">
+        <!-- Transaction Date -->
         <div class="col-md-6 mb-3">
             <label for="transactionDate" class="form-label">Transaction Date</label>
-            <input type="text" class="form-control" formControlName="transactionDate"  name="transactionDate" id="transactionDate" placeholder="Enter transactionDate">
+            <input type="date" 
+                   class="form-control" 
+                   [ngClass]="{
+                     'is-valid': Transactionform.controls['transactionDate'].valid && Transactionform.controls['transactionDate'].touched && Transactionform.controls['transactionDate'].dirty,
+                     'is-invalid': Transactionform.controls['transactionDate'].invalid && Transactionform.controls['transactionDate'].touched
+                   }"
+                   formControlName="transactionDate" 
+                   id="transactionDate">
+            <div *ngIf="Transactionform.controls['transactionDate'].invalid && Transactionform.controls['transactionDate'].touched" class="text-danger">
+                Transaction date is required.
+            </div>
         </div>
-    
-      
 
+        <!-- Account Name -->
         <div class="col-md-6 mb-3">
-            <label for="departmentDropdown" class="form-label">Account Name</label>
+            <label for="accountId" class="form-label">Account Name</label>  
+            <select class="form-control" 
+                    [ngClass]="{
+                      'is-valid': Transactionform.controls['accountId'].valid && Transactionform.controls['accountId'].touched && Transactionform.controls['accountId'].dirty,
+                      'is-invalid': Transactionform.controls['accountId'].invalid && Transactionform.controls['accountId'].touched
+                    }"
+                    formControlName="accountId" id="accountId">
+                <option value="">Select</option>
+                <option *ngFor="let item of accountList$ | async" [value]="item.id">
+                    {{ item.name }}
+                </option>
+            </select>
+            <div *ngIf="Transactionform.controls['accountId'].invalid && Transactionform.controls['accountId'].touched" class="text-danger">
+                Account Name is required.
+            </div>
+        </div>        
 
-            <select class="form-control" id="departmentDropdown" formControlName="accountId">
-                @for (item of accountList$ |async; track $index) {
-                    <option [value]="">select</option>
-                    <option [value]="item.id">{{item.name}}</option>
-                }
-            </select>          
-        </div>
+        <!-- Description -->
         <div class="col-md-6 mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" formControlName="description"  name="description" id="description" placeholder="Enter description">
+            <input type="text" 
+                   class="form-control" 
+                   [ngClass]="{
+                     'is-valid': Transactionform.controls['description'].valid && Transactionform.controls['description'].touched && Transactionform.controls['description'].dirty,
+                     'is-invalid': Transactionform.controls['description'].invalid && Transactionform.controls['description'].touched
+                   }"
+                   formControlName="description" 
+                   id="description">
+            <div *ngIf="Transactionform.controls['description'].invalid && Transactionform.controls['description'].touched" class="text-danger">
+                Description is required.
+            </div>
         </div>
+
+        <!-- Debit Amount -->
         <div class="col-md-6 mb-3">
             <label for="debitAmount" class="form-label">Debit Amount</label>
-            <input type="text" class="form-control" formControlName="debitAmount" name="debitAmount" id="debitAmount" placeholder="Enter debit Amount">
+            <input type="number" 
+                   class="form-control" 
+                   [ngClass]="{
+                     'is-valid': Transactionform.controls['debitAmount'].valid && Transactionform.controls['debitAmount'].touched && Transactionform.controls['debitAmount'].dirty,
+                     'is-invalid': Transactionform.controls['debitAmount'].invalid && Transactionform.controls['debitAmount'].touched
+                   }"
+                   formControlName="debitAmount" 
+                   id="debitAmount">
+            <div *ngIf="Transactionform.controls['debitAmount'].invalid && Transactionform.controls['debitAmount'].touched" class="text-danger">
+                Debit Amount is required.
+            </div>
         </div>
-        <div class="col-md-6 mb-3">
+
+        <!-- Credit Amount -->
+        <div class="col-md-12 mb-3">
             <label for="creditAmount" class="form-label">Credit Amount</label>
-            <input type="text" class="form-control" formControlName="creditAmount" name="creditAmount" id="creditAmount" placeholder="Enter creditAmount">
+            <input type="number" 
+                   class="form-control" 
+                   [ngClass]="{
+                     'is-valid': Transactionform.controls['creditAmount'].valid && Transactionform.controls['creditAmount'].touched && Transactionform.controls['creditAmount'].dirty,
+                     'is-invalid': Transactionform.controls['creditAmount'].invalid && Transactionform.controls['creditAmount'].touched
+                   }"
+                   formControlName="creditAmount" 
+                   id="creditAmount">
+            <div *ngIf="Transactionform.controls['creditAmount'].invalid && Transactionform.controls['creditAmount'].touched" class="text-danger">
+                Credit Amount is required.
+            </div>
         </div>
     </div>
-   
-    @if(Transactionform.controls['id'].value==0){
-        <button type="button" (click)="onSaveTransaction()" class="btn btn-primary mr-3">save Transaction</button>
-        <!-- <button  class="btn btn-outline-secondary"  (click)="isformvisible.set(false)">close</button> -->
-    }
-    @else {
-        <button type="button" (click)="onupdateTransaction()" class="btn btn-primary mr-3">Update Transaction</button>
-        <!-- <button  class="btn btn-warning-secondary"  (click)="isformvisible.set(false)">close</button> -->
-    }
-   
+  <!-- Buttons Row -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+        @if(Transactionform.controls['id'].value == 0) {
+            <button type="button" (click)="onSaveTransaction()" class="btn btn-primary w-100">Save Transaction</button>
+        }
+        @else {
+            <button type="button" (click)="onupdateTransaction()" class="btn btn-primary w-100">Update Transaction</button>
+        }
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <button type="button" class="btn btn-secondary w-100" (click)="closeForm()">Close</button>
+    </div>
+</div>
+  
 </form>

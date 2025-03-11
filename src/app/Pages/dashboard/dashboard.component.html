@@ -1,32 +1,31 @@
-<div class="row">
-
-        <!-- Total Employees Widget -->
-        <div class="col-md-6 col-4"> 
-            <div class="small-box text-bg-primary" style="height: auto;">
-                <div class="inner">
-                    <h3>{{ (transactionist$ | async)?.length }}</h3>
-                    <p>Total Transaction</p>
-                </div>
-                <a routerLink="/employee" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                    More info <i class="bi bi-link-45deg"></i> 
-                </a>
+<div class="row g-3"> 
+    <!-- Total Transactions Widget -->
+    <div class="col-lg-6 col-md-6 col-sm-12"> 
+        <div class="card shadow border-0 text-white bg-primary">
+            <div class="card-body text-center">
+                <h3 class="fw-bold">{{ (transactionist$ | async)?.length }}</h3>
+                <p class="fs-5">Total Transactions</p>
             </div>
-        </div>
-    
-        <!-- Total Projects Widget -->
-        <div class="col-md-6 col-4"> 
-            <div class="small-box text-bg-success" style="height: auto;">
-                <div class="inner">
-                    <h3>{{ (accountList$ | async)?.length }}</h3>
-                    <p>Total Account</p>
-                </div>
-                <a routerLink="/project" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                    More info <i class="bi bi-link-45deg"></i> 
+            <div class="card-footer bg-transparent border-0 text-center">
+                <a routerLink="/Transaction" class="text-white text-decoration-none fw-semibold">
+                    More info <i class="bi bi-arrow-right-circle-fill"></i>
                 </a>
             </div>
         </div>
     </div>
-    
 
-  
-
+    <!-- Total Accounts Widget -->
+    <div class="col-lg-6 col-md-6 col-sm-12"> 
+        <div class="card shadow border-0 text-white bg-success">
+            <div class="card-body text-center">
+                <h3 class="fw-bold">{{ (accountList$ | async)?.length }}</h3>
+                <p class="fs-5">Total Accounts</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-center">
+                <a routerLink="/account" class="text-white text-decoration-none fw-semibold">
+                    More info <i class="bi bi-arrow-right-circle-fill"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

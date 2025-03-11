@@ -1,18 +1,47 @@
-
 <body>
     <div class="form-2-wrapper">
         <div class="logo text-center">
-            <h2>Logo</h2>
-        </div>
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Circular background -->
+                <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="blue"/>
+        
+                <!-- Properly centered text -->
+                <text x="50%" y="50%" fill="white" font-size="6px" font-weight="bold" text-anchor="middle" dy=".3em">
+                    Account
+                </text>
+            </svg>
+        </div>          
         <h2 class="text-center mb-4">Sign Into Your Account</h2>
-        <form action="#">
+
+        <!-- Add #loginForm to reference the form in TypeScript -->
+        <form #loginForm="ngForm">
             <div class="mb-3 form-box">
-                <input type="text" class="form-control" id="email" [(ngModel)]="loginobj.userName" name="userName" placeholder="Enter Your Email" required>
+                <input type="text" class="form-control" id="email" [(ngModel)]="loginobj.userName" 
+                    name="userName" placeholder="Enter Your Email" required #userName="ngModel">
+                <div *ngIf="userName.invalid && userName.touched" class="text-danger text-center">
+                    Username is required.
+                </div>
             </div>
+
             <div class="mb-3">
-                <input type="password" class="form-control" [(ngModel)]="loginobj.password" id="password" name="password" placeholder="Enter Your Password" required>
+                <input type="password" class="form-control" [(ngModel)]="loginobj.password" 
+                    id="password" name="password" placeholder="Enter Your Password" required #password="ngModel">
+                <div *ngIf="password.invalid && password.touched" class="text-danger text-center">
+                    Password is required.
+                </div>
             </div>
-            <button type="button" (click)="Onlogin()" class="btn login-btn mb-3">Login</button>
+
+            <!-- Disable button if form is invalid -->
+            <button type="button" (click)="Onlogin(loginForm)" class="btn login-btn mb-3" [disabled]="loginForm.invalid">
+                Login
+            </button>
+
+            <!-- Register Link -->
+            <div class="text-center">
+                <p>Don't have an account? 
+                    <a [routerLink]="'/register'" class="register-link">Register here</a>
+                </p>
+            </div>
         </form>
     </div>
 </body>

@@ -1,39 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light shadow">
+    <div class="container-fluid"> <!-- Change 'container' to 'container-fluid' to remove padding -->
+        <a class="navbar-brand fw-bold" href="#">Transaction Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">Transaction Management System</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" routerLink="/employee">Employee</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/project">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/employeeproject">Employee Project</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/Transaction">Transaction</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/account">Account</a>
-                    </li>
-                    
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/Transaction">Transaction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/account">Account</a>
+                </li>
+            </ul>
         </div>
-    </nav>
 
-    <div class="container mt-4">
-        <router-outlet></router-outlet>
+        <!-- Logout Button Aligned to the Right Corner -->
+        <button class="btn btn-danger ms-auto me-0" (click)="logout()"> <!-- 'ms-auto' pushes it right, 'me-0' removes margin -->
+            <i class="bi bi-box-arrow-right"></i> Logout
+        </button>
     </div>
+</nav>
 
-
+<div class="container mt-4">
+    <router-outlet></router-outlet>
+</div>

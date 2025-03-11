@@ -1,0 +1,70 @@
+<body>
+    <div class="form-2-wrapper">
+      <div class="logo text-center">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="blue"/>
+          <text x="50%" y="50%" fill="white" font-size="6px" font-weight="bold" text-anchor="middle" dy=".3em">
+            Account
+          </text>
+        </svg>
+      </div>
+  
+      <h2 class="text-center mb-4">Create Your Account</h2>
+  
+      <!-- Registration Form -->
+      <form #registerForm="ngForm" (ngSubmit)="OnRegister()">
+        <div class="mb-3 form-box">
+          <input type="text" class="form-control" id="userName" [(ngModel)]="Registerform.userName" 
+              name="userName" placeholder="Enter Your Username" required #userName="ngModel">
+          <div *ngIf="userName.invalid && userName.touched" class="text-danger text-center">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="mb-3 form-box">
+          <input type="text" class="form-control" id="firstName" [(ngModel)]="Registerform.firstName" 
+              name="firstName" placeholder="Enter Your First Name" required #firstName="ngModel">
+          <div *ngIf="firstName.invalid && firstName.touched" class="text-danger text-center">
+            First Name is required.
+          </div>
+        </div>
+  
+        <div class="mb-3 form-box">
+          <input type="text" class="form-control" id="lastName" [(ngModel)]="Registerform.lastName" 
+              name="lastName" placeholder="Enter Your Last Name" required #lastName="ngModel">
+          <div *ngIf="lastName.invalid && lastName.touched" class="text-danger text-center">
+            Last Name is required.
+          </div>
+        </div>
+  
+        <div class="mb-3 form-box">
+          <input type="email" class="form-control" id="email" [(ngModel)]="Registerform.email" 
+              name="email" placeholder="Enter Your Email" required #email="ngModel">
+          <div *ngIf="email.invalid && email.touched" class="text-danger text-center">
+            Email is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <input type="password" class="form-control" [(ngModel)]="Registerform.password" 
+              id="password" name="password" placeholder="Enter Your Password" required #password="ngModel">
+          <div *ngIf="password.invalid && password.touched" class="text-danger text-center">
+            Password is required.
+          </div>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn login-btn mb-3" [disabled]="registerForm.invalid">
+          Register
+        </button>
+  
+        <!-- Login Link -->
+        <div class="text-center">
+          <p>Already have an account? 
+            <a [routerLink]="'/login'" class="register-link">Login here</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
+  
